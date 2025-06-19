@@ -1,7 +1,7 @@
 
 # 🖥️ System Resource Monitor
 
-A simple **bash script** to check your system’s health on Linux  monitor CPU, memory, disk, network, uptime, and top processes — plus an easy way to kill misbehaving processes! 🚀
+A simple **bash script** to check your system’s health on Linux  monitor CPU, memory, disk, network, uptime, and top processes  plus an easy way to kill misbehaving processes! 🚀
 
 ---
 
