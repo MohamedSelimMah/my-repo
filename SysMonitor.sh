@@ -58,11 +58,20 @@ top_processes() {
 }
 
 kill_process() {
-    ascii_art_section "Kill a Process"
-    ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6 | column -t
-    read -p "Enter PID to kill (or type 'exit' to skip): " pid
-    [[ $pid =~ ^[0-9]+$ ]] && kill -9 "$pid" && echo "Process $pid terminated." || echo "Invalid input or skipped."
-    echo ""
+    while true; do
+        ascii_art_section "Kill a Process"
+        ps -eo pid,comm,%cpu --sort=-%cpu | head -n 6 | column -t
+        read -p "Enter PID to kill (or type 'exit' to quit): " pid
+        if [[ $pid == "exit" ]]; then
+            echo "Exiting Kill Process mode..."
+            break
+        elif [[ $pid =~ ^[0-9]+$ ]]; then
+            kill -9 "$pid" && echo "Process $pid terminated." || echo "Failed to terminate process $pid."
+        else
+            echo "Invalid input. Please enter a numeric PID or type 'exit'."
+        fi
+        echo ""
+    done
 }
 
 clear
@@ -81,4 +90,3 @@ kill_process
 ascii_art_title
 echo "              End of System Resource Monitor"
 echo ""
-
