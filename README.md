@@ -58,11 +58,6 @@ Found a bug or want a new feature? Feel free to open an issue or submit a pull r
 
 ---
 
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
 
 Made with ❤️ by ZeroOne
 
